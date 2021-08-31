@@ -9,132 +9,96 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-          appBar: AppBar(title: const Text("SFA Meet 2 - Text")),
+          appBar: AppBar(title: const Text("SFA Meet 2 - Container")),
           body: const Center(
-            child: TypographyDemo(),
+            child: ContainerDemo(),
           ),
         ));
   }
 }
 
-class TypographyDemo extends StatelessWidget {
-  const TypographyDemo({Key? key}) : super(key: key);
+class ContainerDemo extends StatefulWidget {
+  const ContainerDemo({Key? key}) : super(key: key);
 
   @override
+  _ContainerDemoState createState() => _ContainerDemoState();
+}
+
+class _ContainerDemoState extends State<ContainerDemo> {
+  @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-    final styleItems = [
-      Text(
-        'Headline2',
-        style: textTheme.headline2?.copyWith(
-            color: Colors.grey,
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
-            // decoration: TextDecoration.lineThrough,
-            // decoration: TextDecoration.underline,
-            decoration: TextDecoration.combine(
-                [TextDecoration.lineThrough, TextDecoration.underline])),
+    var _listContainer = [
+      // without height it is unseen
+      Container(), //white
+      Container(color: Colors.red),
+      // container is seen, but width do nothing
+      Container(color: Colors.blue, width: 100, height: 30),
+      // show child only, because child block container
+      Container(
+        color: Colors.black,
+        width: 100,
+        height: 30,
+        child: Container(color: Colors.green, width: 100, height: 10),
       ),
-      // headline1, headline2,.. headline6
-      // subtitle1, subtitle2
-      // bodyText1, bodyText2
-      // button, caption, overline
-      Text(
-          List.generate(10, (index) => 'Lorem ipsum dolor si amet').join(' - '),
-          // style: textTheme.subtitle1,
-          textAlign: TextAlign.justify,
-          overflow: TextOverflow.ellipsis,
-          maxLines: 2,
-          style: TextStyle(
-            fontFamily: 'TegakBersambung',
-            fontSize: 24,
-          )),
-      RichText(
-        softWrap: true,
-        textAlign: TextAlign.justify,
-        text: TextSpan(
-          children: [
-            TextSpan(
-              text: 'SISI',
-              style: TextStyle(color: Colors.red),
-            ),
-            TextSpan(
-              text: ' Flutter ',
-              style: TextStyle(color: Colors.green),
-            ),
-            TextSpan(
-              text: 'Academy ',
-              style: TextStyle(color: Colors.blue),
-            ),
-            TextSpan(
-              text: List.generate(3, (index) => 'Lorem ipsum').join(' - '),
-              style: TextStyle(color: Colors.black),
-            ),
-          ],
-        ),
+      // child inside container, padding seperti border, height child diabaikan
+      Container(
+        color: Colors.red,
+        width: 100,
+        height: 30,
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+        child: Container(color: Colors.black, width: 100, height: 10),
       ),
       Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        child: RichText(
-          softWrap: true,
-          // maxLines: 1,
-          textAlign: TextAlign.justify,
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: 'SISI',
-                style: TextStyle(color: Colors.red),
-              ),
-              TextSpan(
-                text: ' Flutter ',
-                style: TextStyle(color: Colors.green),
-              ),
-              TextSpan(
-                text: 'Academy ',
-                style: TextStyle(color: Colors.blue),
-              ),
-              TextSpan(
-                text: List.generate(3, (index) => 'Lorem ipsum dolor si amet')
-                    .join(' '),
-                style: TextStyle(color: Colors.black),
-              ),
-            ],
-          ),
+        color: Colors.yellow,
+        width: 100,
+        // height: 10, //mempengaruhi konten child
+        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        child: Container(color: Colors.green, width: 100, height: 10),
+      ),
+      // Urutan dari terluar : margin, border, padding, content
+      Container(
+        color: Colors.red,
+        margin: EdgeInsets.all(16),
+        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        child: Container(color: Colors.green, width: 100, height: 10),
+      ),
+      // Rotation
+      Container(
+        constraints: BoxConstraints.expand(
+          height:
+          Theme.of(context).textTheme.headline4!.fontSize! * 1.1 + 200.0,
         ),
+        padding: const EdgeInsets.all(8.0),
+        color: Colors.blue[600],
+        alignment: Alignment.center,
+        child: Text('Flutter',
+            style: Theme.of(context)
+                .textTheme
+                .headline4!
+                .copyWith(color: Colors.white)),
+        transform: Matrix4.rotationZ(0.1),
       ),
-      RichText(
-        text: TextSpan(children: [
-          TextSpan(text: '9:30 - 2:30', style: TextStyle(color: Colors.black)),
-          WidgetSpan(
-            child: Transform.translate(
-              offset: const Offset(2, -6),
-              child: Text(
-                '+2',
-                //superscript is usually smaller in size
-                textScaleFactor: 0.7,
-                style: TextStyle(color: Colors.red),
-              ),
-            ),
-          )
-        ]),
+      Container(
+        constraints: BoxConstraints.expand(
+          height:
+          Theme.of(context).textTheme.headline4!.fontSize! * 1.1 + 200.0,
+        ),
+        padding: const EdgeInsets.all(8.0),
+        color: Colors.green[600],
+        alignment: Alignment.center,
+        child: Text('Academy',
+            style: Theme.of(context)
+                .textTheme
+                .headline4!
+                .copyWith(color: Colors.white)),
+        transform: Matrix4.rotationZ(-(3 * 3.14 / 180)),
       ),
-      RichText(
-        text: TextSpan(children: [
-          TextSpan(text: '9:30 - 2:30', style: TextStyle(color: Colors.black)),
-          WidgetSpan(
-            child: Transform.translate(
-              offset: const Offset(2, 0),
-              child: Text(
-                '+2',
-                //superscript is usually smaller in size
-                textScaleFactor: 0.7,
-                style: TextStyle(color: Colors.red),
-              ),
-            ),
-          ),
-        ]),
-      )
     ];
-    return ListView(children: styleItems);
+    return ListView(
+      children: _listContainer,
+      // children: _listContainer,
+    );
   }
 }
+
+
