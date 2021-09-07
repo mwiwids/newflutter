@@ -4,24 +4,24 @@ A new Flutter project.
 
 Pertemuan 2
 - Materi 1
-  a. Container
-  b. Text
-  c. Line
-  d. - Image
-  e. - Icon
-  f. - Card
+  - Container
+  - Text
+  - Line
+    - Image
+    - Icon
+    - Card
 - Materi 2
-  a. - Raised Button
-  b. - Flat Button
-  c. - Outline Button
-  d. - Icon Button
-  e. - InkWell
+  - - Raised Button
+  - - Flat Button
+  - - Outline Button
+  - - Icon Button
+  - - InkWell
 - Materi 3
-  a. Row
-  b. Column
-  c. Stack
-  d. Expanded
-  e. Flexible
+  - Row
+  - Column
+  - Stack
+  - Expanded
+  - Flexible
 
 ## Getting Started
 
