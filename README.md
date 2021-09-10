@@ -11,11 +11,11 @@ Pertemuan 2
     - Icon
     - Card
 - Materi 2
-  - - Raised Button
-  - - Flat Button
-  - - Outline Button
-  - - Icon Button
-  - - InkWell
+  - Raised Button
+    - Flat Button
+    - Outline Button
+    - Icon Button
+    - InkWell
 - Materi 3
   - Row
   - Column
