@@ -6,7 +6,6 @@ Pertemuan 2
 - Materi 1
   - Container
   - Text
-  - Line
     - Image
     - Icon
     - Card
