@@ -13,9 +13,9 @@ Pertemuan 2
 - Materi 2
   - Raised Button (Deprecated - Use Elevated Button)
   - Flat Button (Deprecated - Use Text Button)
-    - Outline Button
-    - Icon Button
-    - InkWell
+  - Outline Button (Deprecated - Use Outlined Button)
+  - Icon Button
+  - InkWell
 - Materi 3
   - Row
   - Column
