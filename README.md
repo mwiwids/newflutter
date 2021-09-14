@@ -11,8 +11,8 @@ Pertemuan 2
     - Icon
     - Card
 - Materi 2
-  - Raised Button
-  - Flat Button
+  - Raised Button (Deprecated - Use Elevated Button)
+  - Flat Button (Deprecated - Use Text Button)
     - Outline Button
     - Icon Button
     - InkWell
