@@ -95,8 +95,10 @@ class TypographyDemo extends StatelessWidget {
       RichText(
         text: TextSpan(
           children: [
-            TextSpan(text: "Superscript dan Subscript : "),
-            TextSpan(text: "10"),
+            TextSpan(
+                text: "Superscript dan Subscript : 10",
+                style: TextStyle(color: Colors.black),
+            ),
             WidgetSpan(
               child: Transform.translate(
                 offset: Offset(1, -6),
@@ -106,7 +108,10 @@ class TypographyDemo extends StatelessWidget {
                 ),
               ),
             ),
-            TextSpan(text: " dan CO"),
+            TextSpan(
+              text: " dan CO",
+              style: TextStyle(color: Colors.black),
+            ),
             WidgetSpan(
               child: Transform.translate(
                 offset: Offset(1, 0),
@@ -120,10 +125,12 @@ class TypographyDemo extends StatelessWidget {
         ),
       ),
       Container(
-        padding : EdgeInsets.all(20),
+        padding: EdgeInsets.all(20),
         child: Text(
-          List.generate(20, (index) => 'Perulangan Text dan Margin menggunakan '
-              'Container ').join(' - '),
+          List.generate(
+              20,
+              (index) => 'Perulangan Text dan Margin menggunakan '
+                  'Container ').join(' - '),
           textAlign: TextAlign.justify,
           overflow: TextOverflow.ellipsis,
           maxLines: 2,
