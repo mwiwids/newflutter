@@ -8,16 +8,11 @@ class ContainerPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('SFA Meet 2 - Container'),
       ),
-      body: Center(
-        child: ContainerDemo(),
-      ),
+      body: containerBody(context),
     );
   }
-}
 
-class ContainerDemo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+  containerBody(BuildContext context) {
     return Center(
       child: ListView(
         children: [
