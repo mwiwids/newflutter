@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import './button.dart';
 import './text.dart';
+import './container.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,14 +29,36 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Container(
         padding: EdgeInsets.all(10),
-        child: ElevatedButton(
-          child: Text("SFA Meet 2 - Text"),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => LinePage()),
-            );
-          },
+        child: ListView(
+          children: [
+            ElevatedButton(
+              child: Text("SFA Meet 2 - Container"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ContainerPage()),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: Text("SFA Meet 2 - Text"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TextPage()),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: Text("SFA Meet 2 - Button"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ButtonPage()),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
